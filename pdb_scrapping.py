@@ -35,7 +35,7 @@ for i in data['objects']:
     res = ''.join(c for c in i['resolution'] if (c.isdigit() or c =='.'))
     if res != "":
       # get pdbs with resolution less than 3
-      if i['pdbid'] not in pdbs_not_exist and float(res) < 3:
+      if i['pdbid'] not in pdbs_not_exist and float(res) <= 2.5:
         # print(i['pdbid'])
         wget.download(url=url_for_pdbs + i['pdbid'] + '.pdb', out=dest_folder)
 
