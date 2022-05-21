@@ -7,19 +7,13 @@ import ssl
 ssl._create_default_https_context = ssl._create_unverified_context
 
 url_for_pdbs = "https://files.rcsb.org/download/"
-url_for_fasta = "https://www.rcsb.org/fasta/entry/"
 
 # check if data folder exists
 if not os.path.isdir('data'):
   os.makedirs('data')
-  
-# check if data_fasta folder exists
-if not os.path.isdir('data_fasta'):
-  os.makedirs('data_fasta')
 
 # save the path of data folder
 dest_folder = os.path.realpath("./data")
-dest_fasta_folder = os.path.realpath("./data_fasta")
 
 # Opening JSON file
 f = open('primary_structures.json')
